@@ -1,0 +1,455 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://dum3ng.github.io/blog/nuxt_on_ie_not_work/">
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>nuxt 在 IE11 上不工作 - My Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.89dc9fe3.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nuxt-ie11" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://dum3ng.github.io/blog" title="My Blog" class="md-header-nav__button md-logo" aria-label="My Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            My Blog
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              nuxt 在 IE11 上不工作
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://dum3ng.github.io/blog" title="My Blog" class="md-nav__button md-logo" aria-label="My Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    My Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Welcome to MkDocs" class="md-nav__link">
+      Welcome to MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        nuxt 在 IE11 上不工作
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="nuxt 在 IE11 上不工作" class="md-nav__link md-nav__link--active">
+      nuxt 在 IE11 上不工作
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    发现问题
+  </a>
+  
+    <nav class="md-nav" aria-label="发现问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polyfill" class="md-nav__link">
+    添加 polyfill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    发现问题
+  </a>
+  
+    <nav class="md-nav" aria-label="发现问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polyfill" class="md-nav__link">
+    添加 polyfill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="nuxt-ie11">nuxt 在 IE11 上不工作</h1>
+<p>使用<code>nuxt.js</code>编写了一个应用之后，在 IE11 上测试，发现出现错误，于是开始了一段调试之旅。</p>
+<p>本来以为可以很快解决，但是最终花了 2 天多的时间，才算基本上解决（仍然有遗留问题）。</p>
+<h2 id="_1">发现问题</h2>
+<p>在 IE11 上打开应用后，出现红色的 loading 图标，应用无法正常打开。</p>
+<p>初步判断是 IE11 不支持代码中的某些特性。</p>
+<h3 id="polyfill">添加 polyfill</h3>
+<p>在<code>nuxt.config.js</code>中添加配置：</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">build</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">babel</span><span class="o">:</span> <span class="p">{</span>
+      <span class="p">{</span>
+          <span class="nx">presets</span><span class="p">({</span> <span class="nx">envName</span> <span class="p">})</span> <span class="p">{</span>
+            <span class="kr">const</span> <span class="nx">envTargets</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="nx">client</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">targets</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="nx">ie</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
+                  <span class="nx">browsers</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&gt;0.25%, last 2 versions, not dead&#39;</span><span class="p">],</span>
+                <span class="p">},</span>
+                <span class="nx">corejs</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="nx">version</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="nx">useBuiltIns</span><span class="o">:</span> <span class="s1">&#39;usage&#39;</span><span class="p">,</span>
+                <span class="nx">polyfills</span><span class="o">:</span> <span class="p">[</span>
+                  <span class="c1">// defaults: https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app#options</span>
+                  <span class="s1">&#39;es6.array.iterator&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;es6.promise&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;es6.object.assign&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;es7.promise.finally&#39;</span><span class="p">,</span>
+                  <span class="c1">// added</span>
+                  <span class="s1">&#39;es7.object.values&#39;</span><span class="p">,</span>
+                <span class="p">],</span>
+              <span class="p">},</span>
+              <span class="nx">server</span><span class="o">:</span> <span class="p">{</span> <span class="nx">node</span><span class="o">:</span> <span class="s1">&#39;current&#39;</span> <span class="p">},</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="p">[</span>
+              <span class="p">[</span>
+                <span class="s1">&#39;@nuxt/babel-preset-app&#39;</span><span class="p">,</span>
+                <span class="p">{</span>
+                  <span class="p">...</span><span class="nx">envTargets</span><span class="p">[</span><span class="nx">envName</span><span class="p">],</span>
+                <span class="p">},</span>
+              <span class="p">],</span>
+              <span class="p">[</span>
+                <span class="s1">&#39;@vue/babel-preset-jsx&#39;</span><span class="p">,</span>
+                <span class="p">{</span>
+                  <span class="nx">injectH</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="p">},</span>
+              <span class="p">],</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s1">&#39;@babel/plugin-syntax-dynamic-import&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;@babel/plugin-proposal-object-rest-spread&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;@babel/plugin-transform-arrow-functions&#39;</span><span class="p">,</span>
+          <span class="p">],</span>
+          <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h3 id="_2">代码</h3>
+<p>到此时， 应用的 loading 图标不再显示红色，但是仍然一直处于 loading 状态，
+控制台也没有任何错误信息输出。</p>
+<p>尝试将应用部署到测试环境，打开后，控制台显示出了错误信息和错误位置。
+错误提示为语法错误。</p>
+<p>查看后发现是某个包使用了<code>es6</code>的<code>class</code>, 但是这个包没有被编译。
+由于代码都是 uglify 后的代码，如何发现这段代码属于哪个包呢？
+考虑后， 尝试使用 <code>silversearcher</code> 去<code>node_modules</code> 文件夹里
+搜索这个包里的字符串常量。
+果然查找到了包名<code>quick-lru</code>, 在 github 上查看其源代码后，发现其 publish 没有
+compile，导致最终的包里仍然包含<code>class</code>关键字。</p>
+<p>将这个包也添加到 nuxt.config.js 的 <code>transpile</code> 中：</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">build</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">transpile</span><span class="o">:</span> <span class="p">[...,</span> <span class="s1">&#39;quick-lru&#39;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>这也反映了 node 生态的一个问题, 很多包并没有很规范的发布流程, 导致一些兼容性问题以及其他问题.
+实际上在应用中引入的是<code>camelcase-keys</code>, 这个包又引入了<code>quick-lru</code>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="Welcome to MkDocs" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome to MkDocs
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
