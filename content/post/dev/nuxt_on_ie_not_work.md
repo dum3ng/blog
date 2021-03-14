@@ -1,7 +1,6 @@
 ---
 title: "Nuxt_on_ie_not_work"
 date: 2020-05-14T12:25:11+08:00
-draft: true
 ---
 # nuxt 在 IE11 上不工作
 
