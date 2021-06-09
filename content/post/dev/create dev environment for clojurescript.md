@@ -69,6 +69,8 @@ shadow-cljs 将使用 deps 来管理依赖。
 
 然后在外部库上右键，选择**Refresh Clojure Deps Project**，即可添加外部库。
 
+![refresh deps](../assets/refresh_deps.png)
+
 ### 启动项目，添加 repl
 
 在 intellij 中添加一个运行配置，选择本地 clojure repl：
