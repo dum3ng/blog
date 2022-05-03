@@ -65,17 +65,17 @@ shadow-cljs 将使用 deps 来管理依赖。
 
 在`clojure deps`面板中，选中我们设定的别名配置`cljs`:
 
-![clojure deps](../assets/clojure_deps.png)
+![clojure deps](/static/post/dev/clojure_deps.png)
 
 然后在外部库上右键，选择**Refresh Clojure Deps Project**，即可添加外部库。
 
-![refresh deps](../assets/refresh_deps.png)
+![refresh deps](/static/post/dev/refresh_deps.png)
 
 ### 启动项目，添加 repl
 
 在 intellij 中添加一个运行配置，选择本地 clojure repl：
 
-![clojure repl](../assets/clojure_repl.png)
+![clojure repl](/static/post/dev/clojure_repl.png)
 
 启动项目：
 
@@ -86,4 +86,4 @@ yarn && yarn watch
 之后，运行`repl`，在其中即可运行命令。
 默认连接的是 clojure 的 repl，可以运行 `(shadow/node-repl)`来切换到 node 的 repl。
 
-![node repl](../assets/node_repl.png)
+![node repl](/static/post/dev/node_repl.png)
